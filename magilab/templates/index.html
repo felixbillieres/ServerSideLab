@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<section class="mode-selection">
+    <h1>Choisis ta quête magique !</h1>
+    
+    <div class="mode-buttons">
+        <a href="{{ url_for('main.dashboard') }}?mode=discovery" class="btn-magic giant-btn">
+            🧙 Mode Découverte
+        </a>
+        
+        <a href="{{ url_for('main.dashboard') }}?mode=tryhard" class="btn-magic giant-btn">
+            ⚔️ Mode Tryhard
+        </a>
+    </div>
+</section>
+{% endblock %}

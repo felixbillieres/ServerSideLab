@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Server Lab - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MagiLab" class="logo">
+            <nav>
+                <a href="{{ url_for('main.dashboard') }}" class="btn-magic">Dashboard</a>
+                <a href="{{ url_for('main.index') }}" class="btn-magic">Accueil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="pixel-text">© 2025 MagiLab - Phreaks2600 & Elliot Belt</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/magic.js') }}"></script>
+</body>
+</html>

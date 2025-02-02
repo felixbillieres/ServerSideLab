@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Tableau de Bord{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <h1>Challenge Disponibles</h1>
+    
+    <div class="dashboard-grid">
+        {% for lab in ['SSRF', 'SSTI', 'XSLT', 'SSI'] %}
+        <div class="lab-card">
+            <h2>{{ lab }} Challenge</h2>
+            <div class="lab-buttons">
+                <a href="/{{ lab.lower() }}/discovery" class="btn-magic">Découverte</a>
+                <a href="/{{ lab.lower() }}/tryhard" class="btn-magic">Tryhard</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
