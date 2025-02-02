@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="challenge-container">
+    <h2>XSLT Discovery Challenge</h2>
+    <div class="challenge-description">
+        <p>Transform the XML input to reveal hidden secrets!</p>
+        <p>Our system processes XML using XSLT stylesheets. Find a way to read <code>/flag-xslt-discovery.txt</code></p>
+    </div>
+    
+    <form method="POST" class="xslt-form">
+        <textarea name="xslt" placeholder="Enter XSLT stylesheet..."></textarea>
+        <button type="submit">Transform</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h3>Transformation Result:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+
+    {% if flag %}
+    <div class="flag-box success">
+        <h3>Congratulations!</h3>
+        <p>Flag: {{ flag }}</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="error-box">
+        <h3>Error:</h3>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

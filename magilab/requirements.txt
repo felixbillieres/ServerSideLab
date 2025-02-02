@@ -1,2 +1,5 @@
 Flask==3.0.2
 Werkzeug==3.0.1
+requests
+lxml==4.9.3
+libxml2-python3==2.9.14
